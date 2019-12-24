@@ -1,5 +1,5 @@
 /*
-    Authors: Samad Mazarei, Salvatore Pena
+    Authors: Samad Mazarei, Salvatore Penza
     Date: 12/8/2019
     Dr. Feister
     COMP262
