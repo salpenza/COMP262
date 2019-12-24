@@ -1,0 +1,24 @@
+// Sal Penza
+// Week 8 Lab
+
+// =========FETCH=========
+fetch0: a_sel=7, b_sel=7, 	alu_sel=AND, r6_write, mar_sel=LOAD;
+fetch1: a_sel=6, c_in, alu_sel=ADDA, r7_write, read, ir0_sel=LOAD, if wait then goto fetch1 endif;
+fetch2: a_sel=7, b_sel=7, alu_sel=AND, r6_write, mar_sel=LOAD;
+fetch3: a_sel=6, c_in, alu_sel=ADDA, r7_write, read, ir1_sel=LOAD, if wait then goto fetch3 endif;
+
+// =========OPCODES=========
+// 0) LOAD
+// 1) ADD
+// 2) STORE
+// 3) STOP
+ 
+switch: goto opcode[IR_OPCODE];
+opcode[0]:  result_sel=IR_CONST8, r0_write, goto opcode0.1;
+opcode[1]:  result_sel=IR_CONST8, r0_write, goto opcode1.1;
+opcode[2]:  result_sel=IR_CONST8, r0_write, goto opcode2.1;
+opcode[3]:  goto opcode[3];
+ 
+opcode0.1: a_sel=0, b_sel=0, alu_sel=AND, mar_sel=LOAD; read, mdr_sel=LOAD_MEM; goto fetch0;
+opcode1.1: result_sel=mdr, r1_write; a_sel=0, b_sel=1, alu_sel=ADD, mdr_sel=LOAD_ALU; goto fetch0;
+opcode2.1: a_sel=0, b_sel=0, alu_sel=AND, mar_sel=LOAD; write; goto fetch0;
