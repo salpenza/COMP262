@@ -1,0 +1,22 @@
+myprogram.mem
+Sal Penza
+
+%
+// ADD and STORE values one after the other in immediate up to 4
+// Values are placed are corresponding memory locations
+0: 0000 1100 // ADD, i
+1: 0000 0001 // 1
+2: 0000 0100 // STORE, i
+3: 0001 0111 // 23
+4: 0000 1100 // ADD, i
+5: 0000 0010 // 2
+6: 0000 0100 // STORE, i
+7: 0011 1000 // 24
+8: 0000 1100 // ADD, i
+9: 0000 0011 // 3
+10: 0000 0100 // STORE, i
+11: 0001 1001 // 25
+12: 0000 1100 // ADD, i
+13: 0000 0100 // 4
+14: 0000 0100 // STORE, i
+15: 0001 1010 // 26
